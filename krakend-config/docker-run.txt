@@ -1,0 +1,11 @@
+----- AGRAGACAO
+docker run -it --volume /$(pwd):/etc/krakend --add-host kubernetes.docker.internal:host-gateway -p 8080:8080 devopsfaith/krakend run -c agregacao.json
+
+
+----- MODIFICACAO
+docker run -it --volume /$(pwd):/etc/krakend --add-host kubernetes.docker.internal:host-gateway -p 8080:8080 devopsfaith/krakend run -c modificacao.json
+
+
+
+
+

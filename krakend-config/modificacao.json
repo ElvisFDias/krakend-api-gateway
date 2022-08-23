@@ -1,0 +1,28 @@
+{
+    "version": 3,
+    "timeout": "10000ms",
+    "port": 8080,
+    "output_encoding": "json",
+    "name": "BFF API Gateway",
+    "endpoints": [
+        {
+            "endpoint": "modification/users/{userId}", 
+            "method": "GET",
+            "input_headers": [
+                "*"
+            ],
+            "backend": [
+                {
+                    "url_pattern": "/v1/user-manager/users/{userId}",
+                    "host": ["http://kubernetes.docker.internal:3000"],
+                    "encoding": "json",
+                    "allow": [
+                        "id",
+                        "first_name",
+                        "last_name"
+                    ]
+                }
+            ]
+        }  
+    ]
+}
